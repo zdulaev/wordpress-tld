@@ -1,0 +1,28 @@
+.withdrawal {
+    display: flex;
+    flex-wrap: wrap;
+}
+.withdrawal__type {
+    flex-basis: calc(100% / 3);
+}
+.withdrawal > .withdrawal__values {
+    width: 100%;
+}
+.withdrawal__values {
+    display: flex;
+}
+.withdrawal__values input {
+    margin-right: 2px;
+    width: 100%;
+}
+
+@media (max-width: 1280px) {
+    .withdrawal__type {
+        flex-basis: calc(100% / 2);
+    }
+}
+@media (max-width: 768px) {
+    .withdrawal__type {
+        flex-basis: calc(100% / 1);
+    }
+}
