@@ -1,8 +1,7 @@
 <?php 
 
 class App {
-    
-    public function __construct() {
+    public function init() {
         add_action( 'init', array($this, 'create_taxonomy_langs') );
         add_action( 'init', array($this, 'create_taxonomy_device') );
         add_action( 'init', array($this, 'create_taxonomy_payment') );
@@ -13,9 +12,9 @@ class App {
 
 
         $maximum_withdrawal_limit = new NumericFieldWithCurrencyDropdownList('currency', ['input.name', 'select.post_id'], 'bookmaker', [
-            	'day' => 'День',
-            	'week' => 'Неделя',
-            	'month' => 'Месяц'
+                'day' => 'День',
+                'week' => 'Неделя',
+                'month' => 'Месяц'
             ], 'Макс. лимит на вывод средств'
         );
         $minimum_withdrawal_amount = new NumericFieldWithCurrencyDropdownList('currency', ['input.name', 'select.post_id'], 'bookmaker', null, 'Минимальная сумма вывода', 'another');
@@ -23,7 +22,6 @@ class App {
         $maximum_withdrawal_limit->render();
         $minimum_withdrawal_amount->render();
     }
-
     public function admin_enqueue_scripts() {
         // wp_enqueue_script('admin-script', get_template_directory_uri() . '/admin/js/script.js', array(), false, true);
         wp_enqueue_style('admin-styles', get_template_directory_uri() . '/admin/css/style.css', array(), null);

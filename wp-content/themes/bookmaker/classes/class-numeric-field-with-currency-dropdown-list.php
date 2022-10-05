@@ -162,8 +162,6 @@ class NumericFieldWithCurrencyDropdownList {
 			}
 
 
-			// мужики, у меня нет времени через рекурсию описывать на нижнем условии, 
-			// знаю что много кода лишнего от этого.. строго не судите
 			if ($this->post_meta_keys !== null) {
 				foreach ($fields as $field_key => $metas) {
 
